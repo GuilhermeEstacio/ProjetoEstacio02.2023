@@ -1,14 +1,18 @@
-drop database if exists FARMÁCIA;{
+modelo fisico MedFarma
 
-create table if not exists FARMÁCIA;
+drop database if exists MedFarma;{
+
+create table if not exists MedFarma;
 use FARMÁCIA;
 
 create table if not exists CLIENTE(
     idcliente int auto_increment not null,
     Nomecliente varchar(30),
+    endereço varchar(60)
     telefone varchar(15),
     numero de identifição varchar(32)
     primary key (idcliente),
+    
 );
 creante table if not exists PRODUTOS_SERVICOS(
     IDprodutos_sevicos int auto_increment not NULL
@@ -29,37 +33,7 @@ create table if not exists item(
     FOREIGN KEY(idvendas)REFERENCES vendas (idvendas),
     Foreign Key (idprodutos_servicos) REFERENCES produtos_servicos (idprodutos_servicos),
 );
-/*INSERIR CLEINTES--->IDCLIENTES,NOME,TELEFONE,CPF, IDCLIENTE*/
-INSERT INTO CLIENTE VALUES
-(null, 'osimhen','979811226701','05712367871'),
-(NULL, 'Kane silva','9234657138913','23456781934'),
-(null, 'Musiala lima','929855371989','05739246189'),
-(null,'Kimmich silva','935825638639','05739217571'),
-(null,"mount olivara","92984550712","35715925846")
-(null,"ter stegen lima",'935661204','89745612304')
-(null,"girou gomes","9293446107","86214587369")
-(null,"depay vitolo","79894556230","41236579865")
-/* inserir valores--> idprodutos_servido,nome, descrição, valor, fornecedor, tipo*/
-insert into produdos_servicos VALUES
-(null,"dorflex","10.00","remedio",'protudo' )
-(null,"neosoro",12.00,"remdio","protudo"),
-(null,"diprirona",,10.00,"remedio","serviço"),
-(null,"benegripe",15.00,"remedio","produto"),
-(null,"shampoo","higiene",15.00,"pedigree","produto"),
-(null,"sabonete",2.00,'higiene',"protudo")
-(null,"escrova de cabelo",3.50,'higiene','protudo')
-(null,"cotonete",6,70,'higiene','protudo')
-(null,"escova de dente",12.00,'higiene','protudo')
-insert into vendas VALUES
-/*inserir valores--->idvendas,quantidades,datavenda,valortotal,idcliente*/ 
-(null,2,'2022-02-25','35.0',1),
-(null,3,'2020-01-25','11.60',2)
-(null,5,"2020-05-12","58.60"2)
-(null,4,"2021-04-25","25.90",3)
-(null,2,"2019-06-31","25.20",2)
-(null,3,"2020-09-23","12.90",1)
-(null,5,"2018-10-09","23.70",2)
-(null,7,"2027-11-11","22.50",1)
+
 /*inserir valores--->idtem,quantidade,valortotal,idvendas,idprodutos_servicos*/
 insert into item VALUES
 (2,32.00,1,1),
